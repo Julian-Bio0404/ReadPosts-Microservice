@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: ./compose/Dockerfile
+    volumes:
+      - .:/code
+    deploy:
+      resources:
+          limits:
+            memory: 200M
+    ports:
+      - "8001:8001"
+    command: /code/compose/start.sh
+    restart: always
+    container_name: ReadPosts
+    restart: always
