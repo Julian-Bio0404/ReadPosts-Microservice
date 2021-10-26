@@ -16,4 +16,3 @@ services:
     command: /code/compose/start.sh
     restart: always
     container_name: ReadPosts
-    restart: always
