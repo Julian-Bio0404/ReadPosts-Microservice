@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from starlette import status
 
 # Database
-from .database import SessionLocal, engine
+from app.database import SessionLocal, engine
 
 
 app = FastAPI()
