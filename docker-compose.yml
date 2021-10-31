@@ -15,4 +15,15 @@ services:
       - "8001:8001"
     command: /code/compose/start.sh
     restart: always
+    networks:
+      - readposts-microservice_default
+      - gaman_monolithic_default
+    external_links:
+      - postgres:postgres
     container_name: ReadPosts
+    
+networks:
+  readposts-microservice_default:
+    driver: bridge
+  gaman_monolithic_default:
+    external: true

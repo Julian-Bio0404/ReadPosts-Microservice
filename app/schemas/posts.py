@@ -1,35 +1,27 @@
 """Posts Schemas."""
 
 # Utilities
-from typing import Optional
+import datetime
 
 # Pydantic
 from pydantic.main import BaseModel
 
-# Schemas
-from .users import User
 
+class PostSchema(BaseModel):
+    """Post schema."""
 
-class PostBase(BaseModel):
-    """Post Base schema."""
-
+    id: int
     author_id: int
     about: str
     privacy: str
     location: str
     feeling: str
-    created: str
-
-    class Config:
-        """Config options."""
-        orm_mode = True
-
-
-class Post(PostBase):
-    """Post schema."""
-
-    id: int
-    post: Optional[PostBase]
+    post_id: int
+    reactions: int
+    comments: int
+    shares: int
+    created: datetime
+    modified: datetime
 
     class Config:
         """Config options."""

@@ -1,11 +1,14 @@
 """Post models."""
 
+# Utilities
+import datetime
+
 # SQLalchemy
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 
 # Database
-from database import Base
+from app.database import Base
 
 
 class Post(Base):
@@ -23,7 +26,7 @@ class Post(Base):
     reactions = Column(Integer)
     comments = Column(Integer)
     shares = Column(Integer)
-    created = Column(DateTime)
-    modified = Column(DateTime)
+    created = Column(DateTime, default=datetime.timezone)
+    modified = Column(DateTime, default=datetime.timezone)
 
     author = relationship('User', back_populates='posts')

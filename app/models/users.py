@@ -5,7 +5,7 @@ from sqlalchemy import Boolean, Column, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 
 # Databese
-from database import Base
+from app.database import Base
 
 
 class User(Base):

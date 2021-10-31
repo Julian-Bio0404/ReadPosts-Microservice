@@ -1,2 +1,2 @@
-from .users import User
-from .posts import Post
+from .users import *
+from .posts import *
